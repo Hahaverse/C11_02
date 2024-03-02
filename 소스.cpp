@@ -1,8 +1,6 @@
-//2023111359 ÃÖ°¡À±
 #include <iostream>
 using namespace std;
 
-/*
 class Animal {
 private:
     int age;
@@ -44,20 +42,22 @@ private:
     bool isSetTail;
 
 public:
-    // »ı¼ºÀÚ¸¦ ÃÑ 3°³ ¿À¹ö·Îµù ÇÏ¼¼¿ä.
-    // tailLength ÃÊ±âÈ­ µÇÁö ¾Ê¾ÒÀ¸¸é isSetTail °ªÀº false
+    // ìƒì„±ìë¥¼ ì´ 3ê°œ ì˜¤ë²„ë¡œë”© í•˜ì„¸ìš”.
+    // tailLength ì´ˆê¸°í™” ë˜ì§€ ì•Šì•˜ìœ¼ë©´ isSetTail ê°’ì€ false
     Cat() :Animal() {
+        tailLength = 0;
         isSetTail = false;
     }
 
-    // ¸í½ÃÀû »ı¼ºÀÚ1 (Animal ÃÊ±âÈ­ °ü·Ã ¸Å°³º¯¼ö 3°³)
-    // tailLength ÃÊ±âÈ­ µÇÁö ¾Ê¾ÒÀ¸¸é isSetTail°ªÀº false
+    // ëª…ì‹œì  ìƒì„±ì1 (Animal ì´ˆê¸°í™” ê´€ë ¨ ë§¤ê°œë³€ìˆ˜ 3ê°œ)
+    // tailLength ì´ˆê¸°í™” ë˜ì§€ ì•Šì•˜ìœ¼ë©´ isSetTailê°’ì€ false
     Cat(int age, int weight, string type) :Animal(age, weight, type) {
+        tailLength = 0;
         isSetTail = false;
     }
 
-    // ¸í½ÃÀû »ı¼ºÀÚ2 (Animal+Cat ÃÊ±âÈ­ °ü·Ã ¸Å°³º¯¼ö 4°³)
-    // tailLength ÃÊ±âÈ­ µÇ¾úÀ¸¸é isSetTail°ªÀº true
+    // ëª…ì‹œì  ìƒì„±ì2 (Animal+Cat ì´ˆê¸°í™” ê´€ë ¨ ë§¤ê°œë³€ìˆ˜ 4ê°œ)
+    // tailLength ì´ˆê¸°í™” ë˜ì—ˆìœ¼ë©´ isSetTailê°’ì€ true
     Cat(int age, int weight, string type, int t) :Animal(age, weight, type), tailLength(t) {
         isSetTail = true;
     }
@@ -65,53 +65,23 @@ public:
     void showCat();
 };
 
-//»ó¼Ó ¹ŞÀº AnimalÀÇ ¸â¹ö¸¦ ÃÖ´ëÇÑ ÀÌ¿ëÇØ¼­ CatÀÇ ¸â¹öÇÔ¼ö¸¦ ±¸ÇöÇÏ¼¼¿ä.
+//ìƒì† ë°›ì€ Animalì˜ ë©¤ë²„ë¥¼ ìµœëŒ€í•œ ì´ìš©í•´ì„œ Catì˜ ë©¤ë²„í•¨ìˆ˜ë¥¼ êµ¬í˜„í•˜ì„¸ìš”.
 void Cat::Meow() {
     cout << "Cat::Meow()" << endl;
 }
 void Cat::showCat() {
     showAnimal();
-
     if(isSetTail==true)
         cout << "Tail length = " << tailLength << endl;
 }
 
 int main() {
     Cat frisky(3, 7, "Russian blue");
-    // tailLength¿¡ °ªÀÌ ¾ø´Â °æ¿ì Ãâ·ÂµÇÁö ¾Êµµ·Ï ÇÏ¼¼¿ä.
+    // tailLengthì— ê°’ì´ ì—†ëŠ” ê²½ìš° ì¶œë ¥ë˜ì§€ ì•Šë„ë¡ í•˜ì„¸ìš”.
     frisky.showCat();
     cout << endl;
 
     Cat oreo(5, 10, "American shortcut", 23);
     oreo.showCat();
     return 0;
-}
-*/
-
-class classA {
-private:
-    int x, y;
-public:
-    ~classA() { cout << "A ¼Ò¸êÀÚ" << endl; }
-};
-class classB:public classA {
-private:
-    int a, b;
-public:
-    ~classB() { cout << "B ¼Ò¸êÀÚ" << endl; }
-};
-class Myclass :public classB {
-private:
-    int myclass;
-public:
-    ~Myclass() { cout << "C ¼Ò¸êÀÚ" << endl; }
-};
-
-int main() {
-    Myclass* pa = new Myclass();
-    delete pa;
-    classB* ps = new Myclass();
-    delete ps;
-    classA* pd = new Myclass();
-    delete pd;
 }
